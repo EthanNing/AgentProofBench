@@ -41,8 +41,15 @@ def main():
         for method in ("program", "online"):
             per_task = [sum(r[f"{method}_rep{k}"] == "PASS" for r in rows for k in (1, 2)) / (2 * len(rows)) for rows in by_task.values()]
             profile[name][method] = round(100 * sum(per_task) / len(per_task), 4)
+    audit = json.loads((ROOT / "data" / "semantic_audit.json").read_text())["cases"]
+    resolved = [r for r in audit if r["label"] != "AMBIGUOUS"]
+    agreed = sum(r["label"] == r["reference_label"] for r in resolved)
+    semantic = {"reviewed": len(audit), "resolved": len(resolved), "agreed": agreed,
+                "resolved_disagreements": len(resolved) - agreed,
+                "indeterminate": len(audit) - len(resolved),
+                "resolved_agreement_percent": round(100 * agreed / len(resolved), 4)}
     print(json.dumps({"related_source_programs": reuse, "paired_execution": dict(groups),
-                      "collection_task_mean_percent": profile}, indent=2))
+                      "collection_task_mean_percent": profile, "semantic_audit": semantic}, indent=2))
 
 
 if __name__ == "__main__":

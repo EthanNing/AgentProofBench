@@ -65,6 +65,10 @@ The same 96 source programs per model remain in the denominator. The Pro related
 
 The reported generator, judge, and actor comparisons use DeepSeek Flash/Pro with thinking disabled. The paper specifies the reference contract, controls, cohort supports, and interpretation of each measurement.
 
+### Semantic evidence for the reference
+
+A **GPT-6 Astra LLM-as-a-judge audit** reviews 195 states across 62 tasks. It corroborates **all 48 requirement changes, all 48 failed replays, and both delivered-regression pairs**. Agreement is **191/192 (99.5%)** among resolved judgments; the full record retains three indeterminate cases. [Inspect the audit and every judgment](data/SEMANTIC_AUDIT.md).
+
 ## Quick start
 
 Reproduce the headline counts from the published tables using Python's standard library:
@@ -75,7 +79,7 @@ cd AgentProofBench
 python scripts/reproduce_results.py
 ```
 
-The script recomputes the P1 joint-pass counts, the P2 assignment-level comparison, and both collection acceptance rates. It runs locally without model credentials or service setup.
+The script recomputes the P1 joint-pass counts, the P2 assignment-level comparison, both collection acceptance rates, and the semantic-audit agreement counts. It runs locally without model credentials or service setup.
 
 **Expected headline counts:** Flash 82/96 and Pro 79/96 for joint reuse; 32/33 versus 1/11 for paired correct delivery. [Inspect the inputs](data/) · [Evidence index](EVIDENCE_INDEX.md).
 
@@ -93,6 +97,7 @@ Open <http://localhost:8000/>.
 |---|---|
 | Interactive project page | [Explore AgentProofBench](https://ethanning.github.io/AgentProofBench/) |
 | Named preprint, 12 pages | [Download PDF](paper/AgentProofBench.pdf) |
+| GPT-6 Astra semantic audit | [195 case judgments and protocol](data/SEMANTIC_AUDIT.md) |
 | All 32 references checked | [Per-reference audit](paper/CITATION_AUDIT.md) |
 | Self-contained LaTeX package | [Download source](paper/AgentProofBench_arxiv_source.tar.gz) |
 | P1 program-condition results | [CSV](data/p1_joint_programmes.csv) |
