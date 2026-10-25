@@ -6,7 +6,7 @@
 
 <a href="https://ethanning.github.io/AgentProofBench/"><img src="assets/readme/banner.svg" alt="AgentProofBench — 97 tasks, 79 families, four Web services. Acceptance, reuse, and execution." width="100%"></a>
 
-[![Homepage](assets/readme/homepage.svg)](https://ethanning.github.io/AgentProofBench/) [![Paper PDF](assets/readme/paper.svg)](paper/AgentProofBench.pdf) [![LaTeX source](assets/readme/source.svg)](paper/AgentProofBench_arxiv_source.tar.gz) [![Results CSV](assets/readme/data.svg)](data/) [![97 tasks](assets/readme/tasks.svg)](https://ethanning.github.io/AgentProofBench/#overview) [![79 families](assets/readme/families.svg)](https://ethanning.github.io/AgentProofBench/#overview) [![Four Web services](assets/readme/services.svg)](https://ethanning.github.io/AgentProofBench/#overview) [![MIT code license](assets/readme/license.svg)](LICENSE)
+[![Homepage](assets/readme/homepage.svg)](https://ethanning.github.io/AgentProofBench/) [![Paper PDF](assets/readme/paper.svg)](paper/AgentProofBench.pdf) [![LaTeX source](assets/readme/source.svg)](paper/AgentProofBench_arxiv_source.tar.gz) [![Results CSV](assets/readme/data.svg)](data/)<br>[![97 tasks](assets/readme/tasks.svg)](https://ethanning.github.io/AgentProofBench/#overview) [![79 families](assets/readme/families.svg)](https://ethanning.github.io/AgentProofBench/#overview) [![Four Web services](assets/readme/services.svg)](https://ethanning.github.io/AgentProofBench/#overview) [![MIT code license](assets/readme/license.svg)](LICENSE)
 
 **One rule. Changing requirements. Visible consequences.**
 
