@@ -93,6 +93,7 @@ Open <http://localhost:8000/>.
 |---|---|
 | Interactive project page | [Explore AgentProofBench](https://ethanning.github.io/AgentProofBench/) |
 | Named preprint, 12 pages | [Download PDF](paper/AgentProofBench.pdf) |
+| All 32 references checked | [Per-reference audit](paper/CITATION_AUDIT.md) |
 | Self-contained LaTeX package | [Download source](paper/AgentProofBench_arxiv_source.tar.gz) |
 | P1 program-condition results | [CSV](data/p1_joint_programmes.csv) |
 | P2 paired program assignments | [CSV](data/p2_program_assignments.csv) |
