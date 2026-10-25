@@ -2,7 +2,7 @@
 
 # AgentProofBench
 
-### Reusable Verifiers for Web Agents
+### Benchmarking Reusable Verifiers for Web Agents
 
 <a href="https://ethanning.github.io/AgentProofBench/"><img src="assets/readme/banner.svg" alt="AgentProofBench — 97 tasks, 79 families, four Web services. Acceptance, reuse, and execution." width="100%"></a>
 
@@ -122,7 +122,7 @@ EVIDENCE_INDEX.md     Measurement units and file entry points
 
 ```bibtex
 @misc{ning2026agentproofbench,
-  title = {AgentProofBench: Reusable Verifiers for Web Agents},
+  title = {AgentProofBench: Benchmarking Reusable Verifiers for Web Agents},
   author = {Ning, Jingjie and Li, Xueqi and Lu, Yi and Kong, Yibo},
   year = {2026},
   howpublished = {Preprint},

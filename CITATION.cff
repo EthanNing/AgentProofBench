@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Please cite the AgentProofBench preprint when using this project."
-title: "AgentProofBench: Reusable Verifiers for Web Agents"
+title: "AgentProofBench: Benchmarking Reusable Verifiers for Web Agents"
 type: software
 authors:
   - family-names: Ning
@@ -16,7 +16,7 @@ url: "https://ethanning.github.io/AgentProofBench/"
 repository-code: "https://github.com/EthanNing/AgentProofBench"
 preferred-citation:
   type: generic
-  title: "AgentProofBench: Reusable Verifiers for Web Agents"
+  title: "AgentProofBench: Benchmarking Reusable Verifiers for Web Agents"
   authors:
     - family-names: Ning
       given-names: Jingjie
