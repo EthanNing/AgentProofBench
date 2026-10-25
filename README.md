@@ -99,7 +99,7 @@ Open <http://localhost:8000/>.
 | Named preprint, 12 pages | [Download PDF](paper/AgentProofBench.pdf) |
 | GPT-6 Astra semantic audit | [195 case judgments and protocol](data/SEMANTIC_AUDIT.md) |
 | All 32 references checked | [Per-reference audit](paper/CITATION_AUDIT.md) |
-| Self-contained LaTeX package | [Download source](paper/AgentProofBench_arxiv_source.tar.gz) |
+| Self-contained LaTeX package | [arXiv ZIP](paper/AgentProofBench_arxiv_source.zip) · [tar.gz source](paper/AgentProofBench_arxiv_source.tar.gz) |
 | P1 program-condition results | [CSV](data/p1_joint_programmes.csv) |
 | P2 paired program assignments | [CSV](data/p2_program_assignments.csv) |
 | Shared collection outcomes | [CSV](data/collection_common_states.csv) |
