@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f4">
+  <meta name="description" content="AgentProofBench connects acceptance tests, frozen-verifier reuse, and the execution consequences of verification for Web agents. A 97-task research benchmark from Carnegie Mellon University.">
+  <meta property="og:title" content="AgentProofBench: Reusable Verifiers for Web Agents">
+  <meta property="og:description" content="One rule. Changing requirements. Visible consequences. Explore acceptance, reuse, and execution in AgentProofBench.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://ethanning.github.io/AgentProofBench/assets/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://ethanning.github.io/AgentProofBench/">
+  <link rel="canonical" href="https://ethanning.github.io/AgentProofBench/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <title>AgentProofBench — Reusable Verifiers for Web Agents</title>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="#overview" aria-label="AgentProofBench home"><img src="assets/favicon.svg" width="30" height="30" alt=""><span>AgentProof<span class="brand-light">Bench</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span class="sr-only">Toggle navigation</span></button>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="#acceptance">Acceptance</a><a href="#reuse">Reuse</a><a href="#execution">Execution</a><a href="#figures">Figures</a>
+      <a class="nav-paper" href="assets/AgentProofBench.pdf" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+  <div class="reading-progress" aria-hidden="true"><span></span></div>
+</header>
+
+<main id="main">
+<section class="hero section-wrap" id="overview" aria-labelledby="hero-title">
+  <div class="hero-intro">
+    <p class="eyebrow"><span class="institution-mark" aria-hidden="true"></span>Carnegie Mellon University <span class="eyebrow-divider">/</span> School of Computer Science</p>
+    <h1 id="hero-title">AgentProofBench<span>Reusable Verifiers for Web Agents</span></h1>
+    <p class="hero-statement">One rule. Changing requirements.<br> <em>Visible consequences.</em></p>
+    <p class="hero-description">A benchmark that follows a verifier from the outcomes it accepts, through the requirements it must recover, to the work an agent delivers.</p>
+    <div class="authors" aria-label="Authors">
+      <a href="mailto:jening@cs.cmu.edu">Jingjie Ning<sup>*</sup></a><a href="mailto:xueqil@cs.cmu.edu">Xueqi Li</a><a href="mailto:yilu4@cs.cmu.edu">Yi Lu</a><a href="mailto:yibok@cs.cmu.edu">Yibo Kong</a>
+      <span class="corresponding">* Corresponding author</span>
+    </div>
+    <div class="hero-actions">
+      <a class="button button-dark" href="assets/AgentProofBench.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2.5h7l3 3v12H5zM12 2.5v4h3M8 10h4M8 13h4"/></svg>Read the paper</a>
+      <a class="button button-outline" href="https://github.com/EthanNing/AgentProofBench" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 5-5 5 5 5m6-10 5 5-5 5m-2-13-2 16"/></svg>Project repository <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <div class="workbench" aria-labelledby="scene-title">
+    <div class="workbench-topline"><span class="small-label" id="scene-title">An unchanged instruction, a changing target</span><span class="illustration-label">Interactive illustration</span></div>
+    <div class="task-banner"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v16H7zM10 8h4M10 12h4M10 16h2"/></svg><p>“Assign both issues to the <strong>Backend</strong> team.”</p><span>Fixed instruction</span></div>
+    <div class="scene-controls" role="group" aria-label="Choose an illustrated initial state and outcome">
+      <button type="button" class="active" data-scene="source" aria-pressed="true"><span>01</span> Source state</button>
+      <button type="button" data-scene="changed" aria-pressed="false"><span>02</span> Changed requirement</button>
+      <button type="button" data-scene="replay" aria-pressed="false"><span>03</span> Old-decision replay</button>
+    </div>
+    <div id="requirement-scene" class="requirement-scene"></div>
+    <noscript><p class="no-script-note">In the source state, Backend is team A. In the changed state, Backend is team B. A verifier frozen on A rejects a correct assignment to B and accepts the old decision. Enable JavaScript to explore the illustrated states.</p></noscript>
+    <div class="scene-explanation" aria-live="polite"><span class="scene-status-dot" aria-hidden="true"></span><p id="scene-explanation">The name Backend resolves to team A. The correct result and the frozen check agree.</p></div>
+    <p class="scene-footnote">Schematic A/B identities illustrate the Linear45 binding change.</p>
+  </div>
+
+  <div class="scope-ribbon" aria-label="Benchmark scope">
+    <div><strong>97<span>tasks</span></strong><p>79 families · 4 Web services</p></div>
+    <div><strong>576<span>programs</span></strong><p>48 families · 558 terminal states</p></div>
+    <div><strong>352<span>policy outcomes</span></strong><p>22 families · 44 assignments · 88 openings</p></div>
+  </div>
+</section>
+
+<section class="key-finding section-wrap" id="evidence" aria-labelledby="finding-title">
+  <div class="section-heading"><span class="section-index">Key finding / Matched execution</span><p class="section-context">Tests linked to delivered work</p></div>
+  <div class="execution-intro"><h2 id="finding-title">Correct panels align<br> with correct delivery.</h2><p>Deployment-state panel correctness separates recorded program assignments whose <strong>two saved openings are both delivered correctly.</strong></p></div>
+  <div class="assignment-comparison">
+    <div class="assignment-group"><div class="assignment-label"><h3>Error-free panel</h3><span class="panel-label">33 assignments</span></div><p class="assignment-stat">32<span>/33</span></p><div class="assignment-glyphs" id="perfect-assignments" role="img" aria-label="32 of 33 error-free program assignments deliver both saved openings correctly"></div><p class="assignment-caption">Both openings delivered correctly</p></div>
+    <div class="comparison-bridge" aria-hidden="true"><svg viewBox="0 0 120 80"><path d="M8 41c29-34 75-34 104 0M102 31l11 10-15 4"/></svg><strong>87.9<span>pp</span></strong><span>difference</span></div>
+    <div class="assignment-group panel-errors"><div class="assignment-label"><h3>Panel contains errors</h3><span class="panel-label">11 assignments</span></div><p class="assignment-stat">1<span>/11</span></p><div class="assignment-glyphs" id="error-assignments" role="img" aria-label="1 of 11 program assignments with panel errors delivers both saved openings correctly"></div><p class="assignment-caption">Both openings delivered correctly</p></div>
+  </div>
+  <div class="assignment-key"><span><i class="glyph-key"><b></b><b></b></i>One assignment, two saved openings</span><span><i class="key-dot success"></i>Both correct</span><span><i class="key-dot other"></i>Other delivery outcome</span></div>
+  <p class="evidence-note">44 program assignments from 22 families. The exploratory difference has a 95% family-cluster interval of [68.8, 100.0] percentage points. Natural endings and checkpoints remain paired within each assignment.</p>
+</section>
+
+<section class="story-map section-wrap" aria-label="Three linked questions">
+  <div class="section-intro"><p class="eyebrow">Follow the evidence</p><h2>What makes a verifier reusable?</h2><p>Every stage asks a different question. Shared tasks, programs, and saved states connect the answers.</p></div>
+  <ol class="story-stages">
+    <li><a href="#acceptance"><span class="stage-number">01</span><svg viewBox="0 0 90 74" aria-hidden="true"><path d="M17 20c7-14 24-14 31 0M45 51c12 15 30 4 30-10" class="icon-soft"/><rect x="11" y="21" width="27" height="36" rx="5"/><path d="m18 32 4 4 9-9M18 46h12"/><rect x="49" y="11" width="27" height="36" rx="5"/><path d="m57 23 11 11m0-11L57 34"/></svg><h3>Acceptance</h3><p>Does the rule recognize the permitted outcomes?</p></a></li>
+    <li><a href="#reuse"><span class="stage-number">02</span><svg viewBox="0 0 90 74" aria-hidden="true"><path d="M15 40C8 13 66 1 77 30M76 31l-10-5m10 5 2-10" class="icon-soft"/><circle cx="24" cy="45" r="17"/><circle cx="65" cy="45" r="17"/><path d="M19 51l5-14 5 14m-9-4h8M61 37v15h6c9-1 5-8-6-7m0-8h5c8 0 7 8-5 8"/></svg><h3>Reuse</h3><p>Does frozen code follow a changed requirement?</p></a></li>
+    <li><a href="#execution"><span class="stage-number">03</span><svg viewBox="0 0 90 74" aria-hidden="true"><path d="M15 37c23 0 26-22 50-22m-36 22c17 0 21 22 37 22M60 10l8 5-8 5M60 54l8 5-8 5" class="icon-soft"/><circle cx="15" cy="37" r="8"/><path d="m69 14 5 5 10-12M70 54l10 10m0-10L70 64"/></svg><h3>Execution</h3><p>What happens when an agent acts on its decision?</p></a></li>
+  </ol>
+</section>
+
+<section class="evidence-section acceptance-section" id="acceptance" aria-labelledby="acceptance-title">
+<div class="section-wrap">
+  <div class="section-heading"><span class="section-index">01 / Acceptance</span><p class="section-context">A rule’s operating profile</p></div>
+  <div class="split-layout">
+    <div class="section-copy"><h2 id="acceptance-title">Which outcomes<br> cross the boundary?</h2><p class="large-copy">Acceptance needs two kinds of evidence: rejected failures and accepted valid solutions.</p><p>On matched collection outcomes, generated programs sharply reduce false acceptance. The paired valid-anchor test makes their selectivity visible.</p><div class="sample-note"><span class="sample-line"></span><p><strong>Same outcomes, same reference</strong><br> 99 failed states + 36 valid anchors<br> 36 tasks · 29 families · Flash</p></div><a class="text-link" href="#figures" data-filter-link="acceptance">Explore the acceptance figures <span aria-hidden="true">↗</span></a></div>
+    <div class="acceptance-viz">
+      <div class="segmented-control" role="group" aria-label="Acceptance metric"><button class="active" type="button" data-acceptance="failure" aria-pressed="true">False acceptance</button><button type="button" data-acceptance="valid" aria-pressed="false">Valid acceptance</button></div>
+      <div class="chart-heading"><h3 id="acceptance-metric">Failures accepted</h3><span id="acceptance-direction">Lower is better</span></div>
+      <div class="comparison-bars" role="img" aria-label="False acceptance: program B12 3.5 percent; online API12 31.7 percent">
+        <div class="comparison-row"><div class="bar-label"><span class="series-dot program"></span>Program <span>B12</span></div><div class="bar-track"><div class="bar-fill program" id="program-bar" style="width:3.5%"></div></div><strong id="program-value">3.5<span>%</span></strong></div>
+        <div class="comparison-row"><div class="bar-label"><span class="series-dot online"></span>Online <span>API12</span></div><div class="bar-track"><div class="bar-fill online" id="online-bar" style="width:31.7%"></div></div><strong id="online-value">31.7<span>%</span></strong></div>
+        <div class="bar-axis"><span>0</span><span>25</span><span>50</span><span>75</span><span>100%</span></div>
+      </div>
+      <p class="chart-takeaway" id="acceptance-takeaway"><strong>28.2 percentage points</strong> lower false acceptance on matched collection failures.</p>
+      <div class="metric-pair"><div><span>False acceptance</span><p><b>3.5%</b><i>vs</i>31.7%</p></div><div><span>Valid-anchor acceptance</span><p><b>77.8%</b><i>vs</i>98.6%</p></div></div>
+      <p class="fine-print">Program / online. Two observations per method and state. These collection-specific measures describe different operating choices.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="evidence-section reuse-section" id="reuse" aria-labelledby="reuse-title">
+<div class="section-wrap">
+  <div class="section-heading"><span class="section-index">02 / Reuse</span><p class="section-context">Freeze the rule. Change the obligation.</p></div>
+  <div class="reuse-title"><h2 id="reuse-title">A familiar instruction.<br> A different correct answer.</h2><p>Names can refer to new identities. Collections can gain required items. Values that must be preserved can change. Joint tests ask whether a frozen verifier follows all tested requirements.</p></div>
+  <div class="reuse-workspace">
+    <div class="chart-topline"><div><span class="small-label">Complete correctness</span><p>Every stage keeps the full 96-program denominator.</p></div><div class="segmented-control compact" role="group" aria-label="Verifier model"><button class="active" type="button" data-model="flash" aria-pressed="true">Flash</button><button type="button" data-model="pro" aria-pressed="false">Pro</button></div></div>
+    <div id="reuse-rings" class="reuse-rings" aria-live="polite"></div>
+    <p class="transition-note" id="reuse-transition">Source → related: 83 remain fully correct; 6 acquire a panel error.</p>
+    <div class="reuse-bottom"><div class="reuse-definition"><span class="plus-sign" aria-hidden="true">+</span><p><strong>The witness adds a distinct test.</strong><br> Replay a source-valid decision after its required target changes. The complete related panel and replay verdict must both be correct.</p></div><div class="reuse-contrast"><span>Related reuse − rebuild · BA</span><strong id="reuse-interval">[−5.47, +1.57] <small>pp</small></strong><p>95% family-bootstrap interval</p></div></div>
+  </div>
+  <div class="inline-finding"><span class="finding-rule"></span><p><strong>82/96 Flash and 79/96 Pro</strong> source programs pass both the complete related panel and its replay witness. Related rebuilds pass in 82/96 and 86/96 programs.</p><a class="text-link" href="#figures" data-filter-link="reuse">See paired transfer <span aria-hidden="true">↗</span></a></div>
+</div>
+</section>
+
+<section class="evidence-section execution-section" id="execution" aria-labelledby="execution-title">
+<div class="section-wrap">
+  <div class="section-heading"><span class="section-index">03 / Execution</span><p class="section-context">From a test result to delivered work</p></div>
+  <div class="execution-intro"><h2 id="execution-title">The decision becomes<br> part of the environment.</h2><p>A gate can release a result, ask the agent to continue, or withhold delivery. Saved histories let those policies start from the <strong>same state and history.</strong></p></div>
+  <div class="execution-details"><div><strong>17</strong><h3>Withheld deliveries</h3><p>All in the panel-error group; 13 terminal states satisfy the reference.</p></div><div><strong>3</strong><h3>Observed regressions</h3><p>All in the panel-error group; completed work changes from reference success to failure.</p></div><div class="baseline-detail"><span class="small-label">The continuation baseline</span><h3>Neutral continuation attains the highest correct delivery.</h3><p>20/22 Flash and 22/22 Pro openings in each cohort, under the tested generic feedback.</p></div></div>
+
+  <div class="branch-explorer">
+    <div class="branch-intro"><div><span class="small-label">Inside one recorded trajectory · Linear45</span><h3>Same correct opening.<br> Different subsequent paths.</h3></div><div class="segmented-control" role="group" aria-label="Choose continuation policy"><button class="active" type="button" data-policy="neutral" aria-pressed="true">Neutral continuation</button><button type="button" data-policy="gate" aria-pressed="false">Program gate</button></div></div>
+    <div id="branch-scene"></div>
+    <p class="branch-caption" id="branch-caption" aria-live="polite">Neutral continuation preserves the correct assignment to the current Backend team.</p>
+    <p class="fine-print">The gate sends generic nonacceptance feedback with no team identifier or program-specific check. A/B are schematic identities; the event sequence comes from the saved Linear45 trajectory.</p>
+  </div>
+</div>
+</section>
+
+<section class="operating-section evidence-section" id="costs" aria-labelledby="costs-title">
+<div class="section-wrap">
+  <div class="section-heading"><span class="section-index">The operating horizon</span><p class="section-context">Assess speed and cost alongside behavior</p></div>
+  <div class="operating-layout"><div class="latency-panel"><h2 id="costs-title">A check has a cost.<br> Reuse changes its shape.</h2><div class="latency-comparison"><div><strong>0.58<span>s</span></strong><p>Program B12</p></div><span class="latency-vs">vs</span><div><strong>20.7<span>s</span></strong><p>Online API12</p></div></div><p class="fine-print">Median standalone assessment, 24-state Flash timing panel.</p><div class="reuse-horizon"><span>Median API-fee break-even</span><p><strong>12</strong> Flash <i>·</i><strong>10</strong> Pro <span>assessments</span></p><p class="fine-print">P1 matched units: 80 Flash / 83 Pro. Construction and online assessment fees.</p></div></div>
+  <div class="cost-explorer"><div class="chart-topline"><span class="small-label">Amortized policy fee</span><label class="select-label"><span class="sr-only">Cost cohort</span><select id="cost-cohort"><option value="flash-natural">Flash · natural ending</option><option value="flash-checkpoint">Flash · checkpoint</option><option value="pro-natural">Pro · natural ending</option><option value="pro-checkpoint">Pro · checkpoint</option></select></label></div><div class="cost-value"><strong id="cost-value">$0.0195</strong><p>per use at <span id="cost-use-label">10</span> uses<br> <span>Program gate · observed costs amortized</span></p></div><div id="cost-chart"></div><label class="range-label" for="reuse-count"><span>Uses of the assigned program</span><output id="reuse-count-output" for="reuse-count">10</output></label><input type="range" id="reuse-count" min="1" max="40" value="10" step="1"><div class="cost-legend"><span><i class="key-dot program"></i>Program gate</span><span><i class="key-dot online"></i>Online gate</span><span><i class="key-dot neutral"></i>Neutral continuation</span></div><p class="fine-print">Calculated as c + C/k from fixed observed policy costs, including the actor prefix. The slider changes accounting, not the recorded outcomes. <span id="cost-support">22 program / 21 online fee records.</span></p></div></div>
+</div>
+</section>
+
+<section class="figure-section section-wrap" id="figures" aria-labelledby="figures-title">
+  <div class="figure-section-heading"><div><p class="eyebrow">Inspect the evidence</p><h2 id="figures-title">The complete picture,<br> one figure at a time.</h2></div><p>Explore the manuscript’s vector figures. Open any figure to zoom, or use the arrow keys to browse.</p></div>
+  <div class="figure-filters" role="group" aria-label="Filter figures"><button type="button" class="active" data-filter="all" aria-pressed="true">All figures</button><button type="button" data-filter="acceptance" aria-pressed="false">Acceptance</button><button type="button" data-filter="reuse" aria-pressed="false">Reuse</button><button type="button" data-filter="execution" aria-pressed="false">Execution</button><button type="button" data-filter="cost" aria-pressed="false">Cost</button></div>
+  <div class="figure-grid" id="figure-grid">
+    <button class="figure-card" type="button" data-category="reuse" data-image="assets/figures/strengthening_p1_transfer.svg" data-title="Complete-panel and joint transfer" data-caption="All 96 source programs per model remain visible from source-panel correctness through related-panel and joint witness tests. Paired intervals compare reuse with target rebuilding."><span class="figure-preview"><img loading="lazy" src="assets/figures/strengthening_p1_transfer.svg" alt="Source, related, and joint correctness for Flash and Pro with paired reuse–rebuild intervals"></span><span class="figure-info"><span>Reuse</span><strong>Complete-panel and joint transfer</strong><i aria-hidden="true">↗</i></span></button>
+    <button class="figure-card" type="button" data-category="execution" data-image="assets/figures/p2_validity.svg" data-title="Panel correctness and delivered outcomes" data-caption="44 program assignments are grouped by their related-panel correctness. Policy lanes preserve correct, incorrect, and withheld delivery for the paired saved openings."><span class="figure-preview"><img loading="lazy" src="assets/figures/p2_validity.svg" alt="Panel correctness connected to outcomes across saved openings and continuation policies"></span><span class="figure-info"><span>Execution</span><strong>Panel correctness and delivered outcomes</strong><i aria-hidden="true">↗</i></span></button>
+    <button class="figure-card" type="button" data-category="acceptance" data-image="assets/figures/revision_faults.svg" data-title="Acceptance across fault types" data-caption="Task-level distributions and family-bootstrap intervals retain both false acceptance and valid-anchor acceptance across five fault categories."><span class="figure-preview"><img loading="lazy" src="assets/figures/revision_faults.svg" alt="Task-level acceptance distributions for identities, collections, relations, preservation, and values"></span><span class="figure-info"><span>Acceptance</span><strong>Acceptance across fault types</strong><i aria-hidden="true">↗</i></span></button>
+    <button class="figure-card" type="button" data-category="cost" data-image="assets/figures/verification_costs.svg" data-title="Construction, operation, and amortization" data-caption="Empirical break-even distributions and cold, warm, and amortized policy fees separate the cost of construction from repeated operation."><span class="figure-preview"><img loading="lazy" src="assets/figures/verification_costs.svg" alt="Fee break-even distributions and policy amortization curves for Flash and Pro"></span><span class="figure-info"><span>Cost</span><strong>Construction, operation, and amortization</strong><i aria-hidden="true">↗</i></span></button>
+    <button class="figure-card" type="button" data-category="execution" data-image="assets/figures/program_landscape.svg" data-title="Every assigned program, both openings" data-caption="Every program assignment links source qualification, related-panel errors, replica identity, and the two observed delivery outcomes. Stars identify the three state regressions."><span class="figure-preview"><img loading="lazy" src="assets/figures/program_landscape.svg" alt="All 22 task pairs with panel errors, source qualification, and delivery outcomes"></span><span class="figure-info"><span>Execution</span><strong>Every assigned program, both openings</strong><i aria-hidden="true">↗</i></span></button>
+    <button class="figure-card" type="button" data-category="acceptance" data-image="assets/figures/benchmark_coverage.svg" data-title="Four complementary outcome views" data-caption="Natural endings, native prefixes, typed faults, and legal alternatives test different aspects of acceptance. Panels can share valid anchors; their counts remain separate."><span class="figure-preview"><img loading="lazy" src="assets/figures/benchmark_coverage.svg" alt="Four illustrated evidence views with their task, family, valid, and failed counts"></span><span class="figure-info"><span>Acceptance</span><strong>Four complementary outcome views</strong><i aria-hidden="true">↗</i></span></button>
+  </div>
+  <p class="gallery-note">All figures are scalable SVGs. Values and experimental units follow the paper.</p>
+</section>
+
+<section class="paper-section" id="paper" aria-labelledby="paper-title"><div class="section-wrap">
+  <div class="paper-top"><div><p class="eyebrow">The paper</p><h2 id="paper-title">From a changed requirement<br> to a tested rule.<br> <em>Then to its consequences.</em></h2><p>AgentProofBench: Reusable Verifiers for Web Agents</p><p class="paper-authors">Jingjie Ning · Xueqi Li · Yi Lu · Yibo Kong<br> School of Computer Science, Carnegie Mellon University</p></div><div class="paper-actions"><a class="button button-light" href="assets/AgentProofBench.pdf" download="AgentProofBench.pdf">Download PDF <span aria-hidden="true">↓</span></a><a class="button button-ghost" href="https://github.com/EthanNing/AgentProofBench" target="_blank" rel="noopener">Project repository <span aria-hidden="true">↗</span></a></div></div>
+  <div class="published-results"><div><span class="small-label">Published results</span><p>Paired P1/P2 result files and a lightweight script to reproduce the headline counts.</p></div><a class="text-link" href="https://github.com/EthanNing/AgentProofBench/tree/main/data" target="_blank" rel="noopener">Explore result files <span aria-hidden="true">↗</span></a></div>
+  <div class="citation-box"><div><span class="small-label">Cite this work</span><button id="copy-bibtex" type="button">Copy BibTeX <span aria-hidden="true">⧉</span></button></div><pre id="bibtex">@misc{ning2026agentproofbench,
+  title = {AgentProofBench: Reusable Verifiers for Web Agents},
+  author = {Ning, Jingjie and Li, Xueqi and Lu, Yi and Kong, Yibo},
+  year = {2026},
+  howpublished = {Preprint},
+  url = {https://ethanning.github.io/AgentProofBench/}
+}</pre><p id="copy-status" class="sr-only" role="status"></p></div>
+  <details class="measurement-scope"><summary>Reading the measurements <span aria-hidden="true">+</span></summary><div><p>The empirical comparisons use DeepSeek Flash and Pro with thinking disabled. Each reuse family contributes one related transformation and one replay witness. The panel–delivery association is an exploratory analysis of 44 assignments clustered within 22 families.</p><p>Scores follow the explicit reference predicates. Native/API checks share that reference implementation; independent human agreement with the task instructions has not been measured. The paper preserves original labels, post-inspection exclusions, and the exact feedback policies.</p></div></details>
+</div></section>
+</main>
+<footer class="site-footer section-wrap"><a class="brand" href="#overview"><img src="assets/favicon.svg" width="27" height="27" alt=""><span>AgentProof<span class="brand-light">Bench</span></span></a><p>Acceptance. Reuse. Execution.</p><a href="mailto:jening@cs.cmu.edu">Contact <span aria-hidden="true">↗</span></a><a href="assets/fonts/OFL.txt">Font license</a></footer>
+
+<dialog id="figure-dialog" class="figure-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><div><span class="small-label">Evidence explorer</span><h2 id="dialog-title"></h2></div><div class="dialog-controls"><button type="button" id="previous-figure" aria-label="Previous figure">←</button><button type="button" id="next-figure" aria-label="Next figure">→</button><span class="toolbar-divider"></span><button type="button" id="zoom-out" aria-label="Zoom out">−</button><button type="button" id="zoom-reset" aria-label="Reset zoom">100%</button><button type="button" id="zoom-in" aria-label="Zoom in">+</button><button type="button" class="close-dialog" id="close-dialog" aria-label="Close figure">×</button></div></div><div class="dialog-viewport"><img id="dialog-image" src="assets/figures/strengthening_p1_transfer.svg" alt=""></div><div class="dialog-caption"><p id="dialog-caption"></p><a id="open-svg" href="assets/figures/strengthening_p1_transfer.svg" target="_blank" rel="noopener">Open vector image <span aria-hidden="true">↗</span></a></div></dialog>
+</body>
+</html>
